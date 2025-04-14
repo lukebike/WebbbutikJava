@@ -1,3 +1,5 @@
+package Data;
+
 public class Customer {
     private int customerId;
     private String name;
@@ -11,8 +13,6 @@ public class Customer {
         this.name = name;
         this.email = email;
         this.password =  password;
-        this.phone = "No phone number found";
-        this.address  = "No address found";
     }
 
     public Customer(int customerId, String name, String email, String phone, String address, String password) {
@@ -79,13 +79,12 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
+        return "Customer {" +
                 "customerId=" + customerId +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +
-                ", password='" + password + '\'' +
                 '}';
     }
 }
