@@ -16,7 +16,7 @@ public class OrderController {
     private OrderRepository orderRepository = new OrderRepository();
 
     public void runMenu() throws SQLException {
-        while(true){
+        while (true) {
             System.out.println("Welcome to the orders menu!");
             System.out.println("Choose an option:");
             System.out.println("1. Retrieve customer orders");
@@ -25,24 +25,24 @@ public class OrderController {
             System.out.println("4. Get order value.");
             System.out.println("0. Quit the program");
             String input = scanner.nextLine();
-            if(input.equals("0")){
+            if (input.equals("0")) {
                 break;
             }
 
-            if(input.equals("1")){
+            if (input.equals("1")) {
                 System.out.println("Give customer ID");
                 int id = Integer.valueOf(scanner.nextLine());
                 System.out.println(orderService.getCustomerOrdersByID(id));
             }
 
-            if(input.equals("2")){
+            if (input.equals("2")) {
                 System.out.println("Give customer ID");
                 int id = Integer.valueOf(scanner.nextLine());
 
                 System.out.println(orderService.addOrder(id));
             }
 
-            if(input.equals("3")){
+            if (input.equals("3")) {
                 System.out.println("Give order ID");
                 int orderId = Integer.valueOf(scanner.nextLine());
                 System.out.println("Give product ID");
@@ -55,7 +55,7 @@ public class OrderController {
                 System.out.println(success ? "Order products added successfully" : "Order products could not be added");
             }
 
-            if(input.equals("4")){
+            if (input.equals("4")) {
                 System.out.println("Give orders products id");
                 int id = Integer.valueOf(scanner.nextLine());
                 double value = orderService.getOrderProductsValue(id);

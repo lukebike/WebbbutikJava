@@ -72,8 +72,8 @@ public class Product {
         this.stockQuantity = stockQuantity;
     }
 
-    public int reduceStockQuantity(int quantity){
-      return this.stockQuantity -= quantity;
+    public int reduceStockQuantity(int quantity) {
+        return this.stockQuantity -= quantity;
     }
 
     @Override

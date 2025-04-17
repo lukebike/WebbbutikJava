@@ -12,7 +12,7 @@ public class ProductController {
     private final ProductService productService = new ProductService();
 
     public void runMenu() throws SQLException {
-        while(true){
+        while (true) {
             System.out.println("Welcome to the products menu!");
             System.out.println("Choose an option:");
             System.out.println("1. Retrieve all products");
@@ -23,31 +23,31 @@ public class ProductController {
             System.out.println("6. Update product quantity");
             System.out.println("0. Quit the program");
             String input = scanner.nextLine();
-            if(input.equals("0")){
+            if (input.equals("0")) {
                 break;
             }
 
-            if(input.equals("1")){
+            if (input.equals("1")) {
                 ArrayList<Product> products = productService.getAllProducts();
-                for(Product p : products){
+                for (Product p : products) {
                     System.out.println(p.toString());
                 }
                 continue;
             }
 
-            if(input.equals("2")){
+            if (input.equals("2")) {
                 System.out.println("Enter product name: ");
                 String name = scanner.nextLine();
                 System.out.println(productService.getProductByName(name));
             }
 
-            if(input.equals("3")){
+            if (input.equals("3")) {
                 System.out.println("Give id: ");
                 int id = Integer.valueOf(scanner.nextLine());
                 productService.getProductByCategory(id);
             }
 
-            if(input.equals("4")){
+            if (input.equals("4")) {
                 System.out.println("Enter manufacturer id");
                 int id = Integer.valueOf(scanner.nextLine());
                 System.out.println("Enter name: ");
@@ -65,7 +65,7 @@ public class ProductController {
                 continue;
             }
 
-            if(input.equals("5")){
+            if (input.equals("5")) {
                 System.out.println("Enter product id");
                 int id = Integer.valueOf(scanner.nextLine());
                 System.out.println("Enter price");
@@ -74,7 +74,7 @@ public class ProductController {
                 System.out.println(success ? price + " is now the new price of the product." : "Price could not be updated, please check your product ID or price.");
             }
 
-            if(input.equals("6")){
+            if (input.equals("6")) {
                 System.out.println("Enter product id");
                 int id = Integer.valueOf(scanner.nextLine());
                 System.out.println("Enter quantity");

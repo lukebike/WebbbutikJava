@@ -28,8 +28,8 @@ public class CustomerControllers {
             }
 
             if (select.equals("1")) {
-               ArrayList<Customer> customers = customerService.getAllCustomers();
-                for(Customer c : customers) {
+                ArrayList<Customer> customers = customerService.getAllCustomers();
+                for (Customer c : customers) {
                     System.out.println("CustomerId: " + c.getCustomerId());
                     System.out.println("Name: " + c.getName());
                 }
@@ -38,8 +38,8 @@ public class CustomerControllers {
 
             if (select.equals("2")) {
                 System.out.println("Give id:");
-                    int id = Integer.valueOf(scanner.nextLine());
-                    customerService.getCustomerById(id);
+                int id = Integer.valueOf(scanner.nextLine());
+                customerService.getCustomerById(id);
             }
 
             if (select.equals("3")) {
@@ -77,7 +77,7 @@ public class CustomerControllers {
             if (select.equals("5")) {
                 System.out.println("Give id: ");
                 int id = Integer.valueOf(scanner.nextLine());
-                System.out.println("Removing customer..." );
+                System.out.println("Removing customer...");
                 boolean success = customerService.deleteCustomer(id);
                 System.out.println(success ? "Customer deleted successfully" : "Customer could not be found, input a valid customer id.");
             }

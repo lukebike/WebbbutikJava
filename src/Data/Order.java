@@ -41,7 +41,7 @@ public class Order {
     public String toString() {
         return
                 "Order ID = " + orderId +
-                ", Customer ID= " + customerId +
-                ", Order Date= " + orderDate;
+                        ", Customer ID= " + customerId +
+                        ", Order Date= " + orderDate;
     }
 }

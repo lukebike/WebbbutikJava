@@ -55,7 +55,7 @@ public class OrdersProducts {
         this.price = price;
     }
 
-    public double totalPrice(){
+    public double totalPrice() {
         return this.quantity * this.price;
     }
 

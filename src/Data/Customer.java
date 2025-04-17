@@ -8,11 +8,11 @@ public class Customer {
     private String address;
     private String password;
 
-    public Customer(int customerId, String name, String email, String password){
+    public Customer(int customerId, String name, String email, String password) {
         this.customerId = customerId;
         this.name = name;
         this.email = email;
-        this.password =  password;
+        this.password = password;
     }
 
     public Customer(int customerId, String name, String email, String phone, String address, String password) {
@@ -73,7 +73,7 @@ public class Customer {
         this.password = password;
     }
 
-    public void introduce(){
+    public void introduce() {
         System.out.println("Hello my name is " + this.name);
     }
 
