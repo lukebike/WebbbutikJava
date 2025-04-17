@@ -38,13 +38,8 @@ public class CustomerControllers {
 
             if (select.equals("2")) {
                 System.out.println("Give id:");
-                try {
                     int id = Integer.valueOf(scanner.nextLine());
                     customerService.getCustomerById(id);
-                } catch (NumberFormatException e) {
-                    System.out.println("Invalid id, try again");
-                }
-                continue;
             }
 
             if (select.equals("3")) {

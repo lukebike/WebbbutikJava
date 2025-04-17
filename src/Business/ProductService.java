@@ -40,6 +40,9 @@ public class ProductService {
         else if(name.isBlank()){
             System.out.println("Name cannot be empty, please try again.");
         }
+        else if(name.length() < 4){
+            System.out.println("Product name can not be shorter than 4 characters, please enter a valid name.");
+        }
         else if(price <= 0){
             System.out.println("Price can not be negative or zero, please enter a valid price.");
         }

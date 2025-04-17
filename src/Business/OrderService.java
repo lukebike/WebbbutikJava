@@ -3,6 +3,7 @@ package Business;
 import Data.*;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class OrderService {
     ProductRepository productRepository = new ProductRepository();
@@ -10,13 +11,17 @@ public class OrderService {
     CustomerService customerService = new CustomerService();
     public boolean getCustomerOrdersByID(int customerId) throws SQLException {
         Customer customer = customerService.getCustomerById(customerId);
+        ArrayList<Order> orders;
         if(customerId <= 0){
             System.out.println("Customer ID can not be negative or zero, please enter a valid ID.");
         } else if(customer == null){
             System.out.println("Customer does not exist, please enter a valid id.");
         } else {
             System.out.println(customer);
-            System.out.println(orderRepository.getOrderByCustomerID(customerId));
+            orders = orderRepository.getOrderByCustomerID(customerId);
+            for(int i = 0; i < orders.size(); i++){
+                System.out.println("Order " + (i + 1) + ": " + orders.get(i).toString());
+            }
             return true;
         }
         return false;
@@ -49,6 +54,8 @@ public class OrderService {
             System.out.println("Price can not be negative or zero, please enter a valid number.");
         }
         else {
+            int newQuantity = product.reduceStockQuantity(quantity);
+            orderRepository.reduceProductQuantity(newQuantity, productId);
             orderRepository.addOrderProducts(orderId, productId, quantity, price);
             return true;
         }
