@@ -1,6 +1,4 @@
-import Data.Customer;
-import Data.Order;
-import Presentation.CustomerControllers;
+import Presentation.CustomerController;
 import Presentation.OrderController;
 import Presentation.ProductController;
 
@@ -20,7 +18,7 @@ public class Main {
     public static void runMenu() throws SQLException {
         Scanner scanner = new Scanner(System.in);
         OrderController orderController = new OrderController();
-        CustomerControllers customerControllers = new CustomerControllers();
+        CustomerController customerController = new CustomerController();
         ProductController productController = new ProductController();
         while(true){
 
@@ -35,7 +33,7 @@ public class Main {
             }
 
             if(menuOption.equals("1")){
-                customerControllers.runMenu();
+                customerController.runMenu();
             }
 
             if(menuOption.equals("2")){

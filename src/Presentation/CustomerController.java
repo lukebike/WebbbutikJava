@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CustomerControllers {
+public class CustomerController {
 
     CustomerService customerService = new CustomerService();
 
