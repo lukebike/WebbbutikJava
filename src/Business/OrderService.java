@@ -3,6 +3,7 @@ package Business;
 import Data.*;
 
 import java.sql.SQLException;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class OrderService {
@@ -35,7 +36,9 @@ public class OrderService {
         }
         {
             if (customer.getCustomerId() == customerId) {
+                orderRepository.addOrder(customerId);
                 System.out.println("Order added under the name of " + customer.getName());
+                return true;
             }
         }
         return false;
@@ -61,6 +64,7 @@ public class OrderService {
     }
 
     public double getOrderProductsValue(int orderProductsId) throws SQLException {
+
         if (orderProductsId <= 0) {
             System.out.println("Order products ID can not be negative or zero, please enter a valid number.");
         }
@@ -68,8 +72,8 @@ public class OrderService {
         if (ordersProducts == null) {
             System.out.println("Order products does not exist, please enter a valid ID.");
         } else {
-            return ordersProducts.totalPrice();
+            return (ordersProducts.totalPrice());
         }
-        return -1;
+        return 0;
     }
 }

@@ -24,10 +24,10 @@ public class ProductRepository {
     }
 
     public Product getProductByName(String productName) throws SQLException {
-        String sql = "SELECT * FROM products WHERE name = ?";
+        String sql = "SELECT * FROM products WHERE name LIKE ?";
         try (Connection con = DriverManager.getConnection(connectionString);
              PreparedStatement pstmt = con.prepareStatement(sql)) {
-            pstmt.setString(1, productName);
+            pstmt.setString(1, "%" + productName + "%");
             ResultSet rs = pstmt.executeQuery();
             if (rs != null) {
                 return new Product(rs.getInt("product_id"), rs.getInt("manufacturer_id"),
